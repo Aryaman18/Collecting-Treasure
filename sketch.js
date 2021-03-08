@@ -23,19 +23,19 @@ function preload() {
 
 function setup() {
 
-  createCanvas(400, 400);
+  createCanvas(windowWidth, windowHeight);
   // Moving background
-  path = createSprite(200, 200);
+  path = createSprite(windowWidth/2, 200);
   path.addImage(pathImg);
   path.velocityY = 4;
 
   //creating the gameOver sign
-  gameOver = createSprite(200, 200, 10, 10);
+  gameOver = createSprite(windowWidth/2, 200, 10, 10);
   gameOver.addAnimation("d", endImg)
   gameOver.visible = false;
 
   //creating boy running
-  boy = createSprite(70, 330, 20, 20);
+  boy = createSprite(windowWidth/2, windowHeight, 20, 20);
   boy.addAnimation("SahilRunning", boyImg);
   boy.scale = 0.08;
 

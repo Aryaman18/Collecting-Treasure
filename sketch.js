@@ -23,21 +23,24 @@ function preload() {
 
 function setup() {
 
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(600,600);
   // Moving background
-  path = createSprite(windowWidth/2, 200);
+  path = createSprite(600/2, 200);
   path.addImage(pathImg);
   path.velocityY = 4;
 
   //creating the gameOver sign
-  gameOver = createSprite(windowWidth/2, 200, 10, 10);
+  gameOver = createSprite(300, 200, 10, 10);
   gameOver.addAnimation("d", endImg)
   gameOver.visible = false;
 
   //creating boy running
-  boy = createSprite(windowWidth/2, windowHeight, 20, 20);
+  boy = createSprite(300, 600, 20, 20);
   boy.addAnimation("SahilRunning", boyImg);
   boy.scale = 0.08;
+  
+
+  
 
 
   //creating groups
@@ -121,7 +124,7 @@ function draw() {
   //creating the score
   textSize(20);
   fill(255);
-  text("Treasure: " + score, windowWidth-140, 30);
+  text("Treasure: " + score, 450, 30);
 
 }
 
@@ -159,7 +162,7 @@ function createJwellery() {
 }
 
 function createSword() {
-  if (World.frameCount % 150 == 0) {
+  if (World.frameCount % 90 == 0) {
     var sword = createSprite(Math.round(random(0, windowWidth), 40, 10, 10));
     sword.addImage(swordImg);
     sword.scale = 0.1;
